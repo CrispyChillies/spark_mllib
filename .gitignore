@@ -1,3 +1,40 @@
 venv/
 data/
 results/
+.vscode/
+.scala-build/
+.metals/
+.src/
+
+# Scala/SBT build artifacts (should NOT be pushed to GitHub)
+target/
+project/target/
+project/project/target/
+.bloop/
+.bsp/
+
+# SBT specific
+project/metals.sbt
+project/project/
+dist/*
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+
+# IDE files
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Scala worksheet
+*.sc
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.swp
+*~
