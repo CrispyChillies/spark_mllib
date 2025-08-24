@@ -166,22 +166,22 @@ object CreditCardFraudDetection {
         .setPredictionCol("prediction")
         .setMetricName("weightedPrecision")
       
-      val evaluatorRecall = new MulticlassClassificationEvaluator()
+      val evaluatorF1 = new MulticlassClassificationEvaluator()
         .setLabelCol("Class")
         .setPredictionCol("prediction")
-        .setMetricName("weightedRecall")
+        .setMetricName("f1")
       
       // Calculate metrics
       val auc = evaluatorAuc.evaluate(predTestDf)
       val accuracy = evaluatorAcc.evaluate(predTestDf)
       val precision = evaluatorPrecision.evaluate(predTestDf)
-      val recall = evaluatorRecall.evaluate(predTestDf)
+      val f1 = evaluatorF1.evaluate(predTestDf)
       
       // Print results
       println(f"AUC = $auc%.4f")
       println(f"Accuracy = $accuracy%.4f")
       println(f"Precision = $precision%.4f")
-      println(f"Recall = $recall%.4f")
+      println(f"F1 Score = $f1%.4f")
       
       // Display model parameters
       println("\n=== MODEL PARAMETERS ===")
